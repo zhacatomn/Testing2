@@ -1,3 +1,4 @@
+//This chess .js file is horribly inefficient. I haven't even coded the checking and mating system yet.
 for (var i = 1; i <= 64; i++) {
     document.getElementById("buttons").innerHTML += '<input type="button" value=" " style="font-size:25px" id = "null"; onclick = "whichBack = which; which = id;which = which - 1 + 1; pawnMove();" >&nbsp';
     if (i % 8 === 0) {
