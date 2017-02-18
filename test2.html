@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<title>Testing</title>
+	<style type="text/css">
+	img {
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 2;
+	}
+	
+	.background {
+		background-color: black;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 3;
+		opacity: 0.8;
+	}
+	
+	.selectors {
+		position: absolute;
+		z-index: 6;
+		color: white;
+		list-style-type: none;
+		left: 0;
+		top: 50px;
+		width: 100%;
+		padding: 0;
+		margin: 0;
+		font-family: Code Light;
+		display: none;
+	}
+	
+	.choose {
+		background-color: black;
+		padding: 15px;
+		text-align: left;
+		border-left-style: solid;
+		border-color: white;
+	}
+	
+	.header {
+		position: absolute;
+		z-index: 6;
+		height: 50px;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-color: black;
+		color: white;
+		font-family: Code Light;
+		border-left-style: solid;
+		border-color: white;
+	}
+	
+	.title {
+		text-align: left;
+		padding-left: 10px;
+	}
+	
+	.scroll {
+		text-align: right;
+		padding-right: 20px;
+		font-size: 20px;
+	}
+	
+	a {
+		text-decoration: none;
+		color: white;
+	}
+	
+	.main-text {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		position: absolute;
+		top: 0;
+		left: 0;
+		font-family: Code Black;
+		z-index: 5;
+		font-size: 80px;
+		width: 100%;
+		height: 100%;
+		flex-direction: column;
+	}
+	
+	.side-text {
+		font-family: Code Light;
+		font-size: 30px;
+	}
+	</style>
+</head>
+
+<body>
+	<script>
+	$(document).ready(function() {
+		var counter = 0;
+
+		function lightWindow() {
+			$('.selectors').slideDown('slow');
+			$('.symbol').text('^');
+		}
+
+		function closeLightWindow() {
+			$('.selectors').slideUp('slow');
+			$('.symbol').text('V');
+		}
+		$('.scroll').on('click', function() {
+			if (counter == 0) {
+				lightWindow();
+				counter++;
+			} else {
+				closeLightWindow();
+				counter--;
+			}
+		});
+		$(".choose").hover(function() {
+			$(this).css('background-color', '#454545');
+		}, function() {
+			$(this).css('background-color', 'black');
+		});
+
+	});
+	</script>
+	<img src="http://wallpapercave.com/wp/VcaBtSE.jpg" width="100%">
+	<div class="background"></div>
+	<ul class="selectors">
+		<li class="choose" onclick="goToURL();">About</li>
+		<li class="choose">Process</li>
+		<li class="choose">Contacts</li>
+	</ul>
+	<table class="header">
+		<tr>
+			<th class="title">Ducks</th>
+			<th class="scroll"><a href="javascript:void(0);" class="symbol">V</a></th>
+		</tr>
+	</table>
+	<div class="main-text">
+		Ducky
+		<br/>
+		<span class="side-text">Revolutionizing the 21st Century</span>
+	</div>
+	<script type="text/javascript">
+	function goToURL() {
+	}
+	</script>
+</body>
+
+</html>
