@@ -1,0 +1,11 @@
+{
+	"compilerOptions":{
+		"outFile": "main.js",
+		"target": "es5"
+	},
+	"files": [
+		"library.ts",
+		"maps.ts",
+		"code.ts"
+	]
+}
