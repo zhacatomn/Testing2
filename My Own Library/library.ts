@@ -1,9 +1,9 @@
 function update(){
-		stopRecurring = true;
-		currentMap.run.call(currentMap);
-		library.update();
+	stopRecurring = true;
+	currentMap.run.call(currentMap);
+	library.update();
 
-		requestAnimationFrame(function(){update.call(currentMap)});
+	requestAnimationFrame(function(){update.call(currentMap)});
 }
 
 let camera = document.getElementById("screen"); //link to the screen
